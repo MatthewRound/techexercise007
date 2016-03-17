@@ -2,7 +2,7 @@
 
 include_once "CommonFunctions.php";
 
-//gtin check
+// gtin check
 $gtin = new GtinFunctions();
 $gtin13 = 629104150021;
 $res = $gtin->determine($gtin13);
@@ -11,7 +11,7 @@ if ($res) {
 }
 
 
-//calc next day delivery
+// calc next day delivery
 $df = DeliveryFunctions::buildFromPartner(new Partner(false, false, 5));
 $date = new DateTime('18-03-2016'); // friday 
 if ($df->determine(clone $date)) {
