@@ -2,6 +2,7 @@
 
 abstract class CommonFunctions
 {
+	public $lastError;
 	public abstract function determine($ob = null);
 }
 

@@ -8,6 +8,8 @@ $gtin13 = 629104150021;
 $res = $gtin->determine($gtin13);
 if ($res) {
 	printf("\nGtin-13 %s : with check digit: %s\n\n", $gtin13, $gtin->gtinWithCheckDigit);
+} else {
+	echo $df->lastError;
 }
 
 
@@ -20,4 +22,6 @@ if ($df->determine(clone $date)) {
 	$b = $df->ndd->format($format);
 	$c = $df->eco->format($format);
 	printf("\nDate:\t%s\nndd:\t%s\neco:\t%s [+%d days]", $a, $b, $c, $df->partner->ecomonyDays);
+} else {
+	echo $df->lastError;
 }
